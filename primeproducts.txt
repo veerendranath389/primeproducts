@@ -1,0 +1,22 @@
+def factors(m):
+    list_factors=[]
+    for i in range(1,m+1):
+        if m%i==0:
+            list_factors.append(i)
+    return list_factors
+def isprime(n):
+    return factors(n)==[1,n]
+def primes(o):
+    primelist=[]
+    for i in range(1,o+1):
+        if isprime(i):
+            primelist.append(i)
+    return primelist
+def primeproducts(m):
+    listofprimes=primes(m)
+    for i in range(0,len(listofprimes)):
+        for j in range(0,len(listofprimes)):
+            if listofprimes[i]*listofprimes[j]==m:
+                return True
+        else:
+            return False
